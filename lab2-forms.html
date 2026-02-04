@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lab 2 – Coffee Order Form</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="firebase-init.js"></script>
 </head>
 <body class="min-h-screen bg-sky-50">
   <div class="min-h-screen flex flex-col">
@@ -90,5 +91,43 @@
       </div>
     </footer>
   </div>
+          <script>
+            // Simple client-side form handler that uses window.addOrder provided by firebase-init.js
+            (function () {
+              const form = document.querySelector('form');
+              if (!form) return;
+              form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                const fd = new FormData(form);
+                const extras = [];
+                // extras may have multiple entries with same name
+                for (const [k, v] of fd.entries()) {
+                  if (k === 'extras') extras.push(v);
+                }
+
+                const order = {
+                  customerName: fd.get('customerName') || '',
+                  email: fd.get('email') || '',
+                  coffeeType: fd.get('coffeeType') || '',
+                  size: fd.get('size') || '',
+                  extras: extras,
+                  instructions: fd.get('instructions') || ''
+                };
+
+                try {
+                  if (window.addOrder) {
+                    const id = await window.addOrder(order);
+                    alert('Order submitted — id: ' + id);
+                    form.reset();
+                  } else {
+                    alert('Firebase not initialized. Order not saved.');
+                  }
+                } catch (err) {
+                  console.error(err);
+                  alert('Error saving order: ' + err.message);
+                }
+              });
+            })();
+          </script>
 </body>
 </html>

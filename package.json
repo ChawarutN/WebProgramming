@@ -1,0 +1,14 @@
+{
+  "name": "webprogramming-labs",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npx http-server . -p 8000",
+    "preview": "npx http-server . -p 8000",
+    "install:tailwind": "npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p",
+    "build:css": "npx tailwindcss -i ./src/input.css -o ./dist/styles.css --minify"
+  },
+  "dependencies": {
+    "firebase": "^12.8.0"
+  }
+}
