@@ -4,29 +4,81 @@
   <meta charset="UTF-8">
   <meta name="author" content="Chawarut Nawasri">
   <meta name="description" content="This is a sample page created for Lab 1.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lab 1 – My First Web Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-  <h1>Chawarut's Web Playground</h1>
+  <div class="min-h-screen bg-gradient-to-br from-sky-50 via-white to-rose-50 flex flex-col">
+    <header class="bg-white/60 backdrop-blur sticky top-0 z-10 border-b border-white/60">
+      <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-xl bg-rose-500/90 flex items-center justify-center text-white font-bold">CN</div>
+          <div>
+            <h1 class="text-lg font-semibold text-sky-900">Chawarut's Web Playground</h1>
+            <p class="text-xs text-sky-700/80">Labs, experiments, and small projects</p>
+          </div>
+        </div>
+        <nav class="hidden sm:flex space-x-4 text-sm">
+          <a href="lab2-home.html" class="px-3 py-1 rounded-md hover:bg-sky-100">Lab 2 – Navigation</a>
+          <a href="lab2-forms.html" class="px-3 py-1 rounded-md hover:bg-sky-100">Lab 2 – Coffee Form</a>
+        </nav>
+        <div class="sm:hidden">
+          <a href="lab2-home.html" class="px-3 py-1 text-sm text-sky-700">Labs</a>
+        </div>
+      </div>
+    </header>
 
-  <p>Hello! I'm Chawarut Nawasri, a curious coder learning how to build awesome websites and Java programs.</p>
-  <p>I love breaking problems down into steps, solving puzzles, and working through projects methodically.</p>
+    <main class="flex-grow">
+      <section class="max-w-4xl mx-auto px-6 py-12">
+        <div class="bg-white shadow-lg rounded-2xl p-8 sm:p-12">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:gap-8 gap-6">
+            <div class="flex-1">
+              <h2 class="text-3xl sm:text-4xl font-extrabold text-sky-900">Hello! I'm Chawarut Nawasri</h2>
+              <p class="mt-3 text-sky-700/90">A curious coder learning to build beautiful websites and Java programs. I enjoy breaking problems into steps and exploring tools and techniques.</p>
 
-  <ul>
-    <li>Java programming</li>
-    <li>Retro synth music</li>
-    <li>AI tools</li>
-    <li>Learning web dev</li>
-    <li>Evening coding vibes</li>
-  </ul>
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a href="lab2-home.html" class="inline-block bg-rose-500 text-white px-4 py-2 rounded-md shadow hover:bg-rose-600">View Labs</a>
+                <a href="https://www.w3schools.com/" class="inline-block border border-sky-200 px-4 py-2 rounded-md text-sky-700 hover:bg-sky-50">Resources</a>
+              </div>
+            </div>
 
-  <p>I often use <a href="https://www.w3schools.com/">W3Schools</a> to practice HTML and explore new concepts.</p>
+            <div class="w-full sm:w-48">
+              <div class="aspect-square w-full bg-gradient-to-tr from-rose-200 to-sky-200 rounded-xl flex items-center justify-center text-2xl font-bold text-rose-800">CN</div>
+            </div>
+          </div>
+        </div>
 
-  <h2>Explore More Labs</h2>
-  <ul>
-    <li><a href="lab2-home.html">Lab 2 – Navigation and Forms</a></li>
-    <li><a href="lab2-forms.html">Lab 2 – Coffee Order Form</a></li>
-  </ul>
-  
+        <section class="mt-8 grid gap-6 sm:grid-cols-2">
+          <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+            <h3 class="font-semibold text-sky-900">Interests</h3>
+            <ul class="mt-3 space-y-2 text-sky-700">
+              <li>Java programming</li>
+              <li>Retro synth music</li>
+              <li>AI tools</li>
+              <li>Learning web dev</li>
+              <li>Evening coding vibes</li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+            <h3 class="font-semibold text-sky-900">About This Page</h3>
+            <p class="mt-3 text-sky-700">This is a simple collection of labs and experiments. Click through to explore forms, navigation, and styling exercises.</p>
+            <div class="mt-4 flex gap-3">
+              <a href="lab2-home.html" class="text-sm px-3 py-2 bg-sky-50 border rounded-md text-sky-700">Lab 2 – Navigation</a>
+              <a href="lab2-forms.html" class="text-sm px-3 py-2 bg-sky-50 border rounded-md text-sky-700">Lab 2 – Forms</a>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="bg-white/70 border-t py-4">
+      <div class="max-w-4xl mx-auto px-6 text-sm text-sky-700 flex items-center justify-between">
+        <div>© <span id="year">2026</span> Chawarut Nawasri</div>
+        <div>Built with <a href="https://tailwindcss.com/" class="text-rose-600 hover:underline">Tailwind CSS</a></div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
