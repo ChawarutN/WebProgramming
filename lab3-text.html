@@ -4,101 +4,83 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Styling Text and Fonts</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body 
-    {
-  font-family: sans-serif;
-    }
-
-h1 
-{
-  font-size: 3rem;
-  font-weight: bold;
-  text-align: center;
-  text-shadow: 2px 2px red;
-}
-
-h2 
-{
-  font-size: 2rem;
-  font-weight: lighter;
-  text-transform: uppercase;
-}
-
-p 
-{
-  text-align: justify;
-  line-height: 1.6;
-}
-
-section:nth-of-type(3) p 
-{
-  text-transform: capitalize;
-}
-
-section:nth-of-type(4) p 
-{
-  text-shadow: 1px 1px 3px gray;
-}
-
-footer 
-{
-  text-align: center;
-}
-
-ul 
-{
-  list-style-type: square;
-}
-
-ol 
-{
-  list-style-type: upper-roman;
-}
-
-li 
-{
-  margin: 1rem 0;
-}
+    /* Preserve original classroom styles while using Tailwind */
+    h1 { text-shadow: 2px 2px #f87171; }
+    section:nth-of-type(3) p { text-transform: capitalize; }
+    section:nth-of-type(4) p { text-shadow: 1px 1px 3px gray; }
   </style>
 </head>
-<body>
-  <header>
-    <h1>Welcome to Text Styling Lab</h1>
-  </header>
-  <main>
-    <section>
-      <h2>Font Properties</h2>
-      <p>This paragraph demonstrates the use of font-family, font-size, and font-weight properties.</p>
-    </section>
-    <section>
-      <h2>Text Alignment</h2>
-      <p>This paragraph demonstrates how to align text using the text-align property.</p>
-    </section>
-    <section>
-      <h2>Transforming Text</h2>
-      <p>This paragraph demonstrates text transformation with uppercase, lowercase, and capitalization.</p>
-    </section>
-    <section>
-      <h2>Text Shadow</h2>
-      <p>This paragraph demonstrates how to add shadow effects to text.</p>
-    </section>
-    <section>
-      <h2>Lists</h2>
-      <ul>
-        <li>Item One</li>
-        <li>Item Two</li>
-        <li>Item Three</li>
-      </ul>
-      <ol>
-        <li>First Step</li>
-        <li>Second Step</li>
-        <li>Third Step</li>
-      </ol>
-    </section>
-  </main>
-  <footer>
-    <p>Styling Text and Fonts Lab © 2025</p>
-  </footer>
+<body class="min-h-screen bg-sky-50">
+  <div class="min-h-screen flex flex-col">
+    <header class="bg-white/60 backdrop-blur sticky top-0 z-10 border-b">
+      <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-rose-500/90 flex items-center justify-center text-white font-bold">CN</div>
+          <div>
+            <h1 class="text-lg font-semibold text-sky-900">Chawarut's Web Playground</h1>
+            <p class="text-xs text-sky-700/80">Text & Fonts Lab</p>
+          </div>
+        </div>
+        <nav class="hidden sm:flex gap-4 text-sm">
+          <a href="index.html" class="px-3 py-1 rounded-md hover:bg-sky-100">Home</a>
+          <a href="lab3-external.html" class="px-3 py-1 rounded-md hover:bg-sky-100">Lab 3</a>
+          <a href="lab2-home.html" class="px-3 py-1 rounded-md hover:bg-sky-100">Lab 2</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-grow">
+      <section class="max-w-4xl mx-auto px-6 py-12 space-y-8">
+        <div class="bg-white p-8 rounded-2xl shadow">
+          <h2 class="text-2xl font-bold text-sky-900 text-center">Welcome to Text Styling Lab</h2>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl shadow space-y-6">
+          <section>
+            <h3 class="text-xl font-semibold text-sky-900">Font Properties</h3>
+            <p class="mt-2 text-sky-700">This paragraph demonstrates the use of font-family, font-size, and font-weight properties.</p>
+          </section>
+
+          <section>
+            <h3 class="text-xl font-semibold text-sky-900">Text Alignment</h3>
+            <p class="mt-2 text-sky-700">This paragraph demonstrates how to align text using the text-align property.</p>
+          </section>
+
+          <section>
+            <h3 class="text-xl font-semibold text-sky-900">Transforming Text</h3>
+            <p class="mt-2 text-sky-700">This paragraph demonstrates text transformation with uppercase, lowercase, and capitalization.</p>
+          </section>
+
+          <section>
+            <h3 class="text-xl font-semibold text-sky-900">Text Shadow</h3>
+            <p class="mt-2 text-sky-700">This paragraph demonstrates how to add shadow effects to text.</p>
+          </section>
+
+          <section>
+            <h3 class="text-xl font-semibold text-sky-900">Lists</h3>
+            <ul class="mt-2 list-disc list-inside text-sky-700 space-y-2">
+              <li>Item One</li>
+              <li>Item Two</li>
+              <li>Item Three</li>
+            </ul>
+            <ol class="mt-4 list-decimal list-inside text-sky-700 space-y-2">
+              <li>First Step</li>
+              <li>Second Step</li>
+              <li>Third Step</li>
+            </ol>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-white/70 border-t py-4">
+      <div class="max-w-4xl mx-auto px-6 text-sm text-sky-700 flex items-center justify-between">
+        <div>© <span id="year">2026</span> Chawarut Nawasri</div>
+        <div>Built with <a href="https://tailwindcss.com/" class="text-rose-600 hover:underline">Tailwind CSS</a></div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>

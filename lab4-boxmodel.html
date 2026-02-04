@@ -4,31 +4,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Box Model Lab</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-     .box 
-    {
-        border: 5px solid blue;
-        padding: 20px;
-        margin: 20px;
-        background-color: lightgray;
-        box-sizing: border-box;
-        width: 400px;
-        height: 200px;
+    /* keep original classroom box styles but make responsive */
+    .box {
+      border: 5px solid #2563eb;
+      padding: 20px;
+      margin: 20px 0;
+      background-color: #e5e7eb;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 640px;
+      height: auto;
     }
-
   </style>
 </head>
 
-<body>
-  <h1>CSS Box Model Lab</h1>
+<body class="min-h-screen bg-sky-50">
+  <div class="min-h-screen flex flex-col">
+    <header class="bg-white/60 backdrop-blur sticky top-0 z-10 border-b">
+      <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-rose-500/90 flex items-center justify-center text-white font-bold">CN</div>
+          <div>
+            <h1 class="text-lg font-semibold text-sky-900">Chawarut's Web Playground</h1>
+            <p class="text-xs text-sky-700/80">Box Model Lab</p>
+          </div>
+        </div>
+        <nav class="hidden sm:flex gap-4 text-sm">
+          <a href="index.html" class="px-3 py-1 rounded-md hover:bg-sky-100">Home</a>
+          <a href="lab3-external.html" class="px-3 py-1 rounded-md hover:bg-sky-100">Lab 3</a>
+        </nav>
+      </div>
+    </header>
 
-<div class="box">
-    <p>This is a demonstration of the CSS Box Model.</p>
-</div>
+    <main class="flex-grow">
+      <section class="max-w-4xl mx-auto px-6 py-12">
+        <div class="bg-white p-8 rounded-2xl shadow">
+          <h2 class="text-2xl font-bold text-sky-900">CSS Box Model Lab</h2>
 
-<div class="box">
-    <p>This is another box to test margin spacing.</p>
-</div>
+          <div class="mt-6">
+            <div class="box">
+              <p class="text-sky-700">This is a demonstration of the CSS Box Model.</p>
+            </div>
 
+            <div class="box">
+              <p class="text-sky-700">This is another box to test margin spacing.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-white/70 border-t py-4">
+      <div class="max-w-4xl mx-auto px-6 text-sm text-sky-700 flex items-center justify-between">
+        <div>© <span id="year">2026</span> Chawarut Nawasri</div>
+        <div>Built with <a href="https://tailwindcss.com/" class="text-rose-600 hover:underline">Tailwind CSS</a></div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>

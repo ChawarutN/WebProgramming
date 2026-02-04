@@ -4,24 +4,56 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lab 3 - CSS Formatting Basics</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="lab3-styles.css" />
 </head>
-<body>
-  <h1>Welcome to Lab 3</h1>
+<body class="min-h-screen bg-sky-50">
+  <div class="min-h-screen flex flex-col">
+    <header class="bg-white/60 backdrop-blur sticky top-0 z-10 border-b">
+      <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-rose-500/90 flex items-center justify-center text-white font-bold">CN</div>
+          <div>
+            <h1 class="text-lg font-semibold text-sky-900">Chawarut's Web Playground</h1>
+            <p class="text-xs text-sky-700/80">Lab 3 — CSS Basics</p>
+          </div>
+        </div>
+        <nav class="hidden sm:flex gap-4 text-sm">
+          <a href="index.html" class="px-3 py-1 rounded-md hover:bg-sky-100">Home</a>
+          <a href="lab2-home.html" class="px-3 py-1 rounded-md hover:bg-sky-100">Lab 2</a>
+          <a href="lab3-text.html" class="px-3 py-1 rounded-md hover:bg-sky-100">Text Lab</a>
+        </nav>
+      </div>
+    </header>
 
-  <p>This is the first paragraph. It contains some placeholder text.</p>
-  <p>This is the second paragraph. You can add more content later if you want!</p>
+    <main class="flex-grow">
+      <section class="max-w-4xl mx-auto px-6 py-12">
+        <div class="bg-white p-8 rounded-2xl shadow">
+          <h2 class="text-2xl font-bold text-sky-900">Welcome to Lab 3</h2>
+          <p class="mt-2 text-sky-700">This is the first paragraph. It contains some placeholder text.</p>
+          <p class="mt-2 text-sky-700">This is the second paragraph. You can add more content later if you want!</p>
 
-  <ul>
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
-  </ul>
+          <ul class="mt-4 list-disc list-inside text-sky-700">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+          </ul>
 
-  <a href="https://www.tri-c.edu">Visit Tri-C</a>
+          <a href="https://www.tri-c.edu" class="inline-block mt-4 text-rose-600 hover:underline">Visit Tri-C</a>
 
-  <div class="styled-box">
-    <p>This is a styled box. You’ll make it look awesome with CSS!</p>
+          <div class="mt-6 styled-box">
+            <p class="text-sky-700">This is a styled box. You’ll make it look awesome with CSS!</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-white/70 border-t py-4">
+      <div class="max-w-4xl mx-auto px-6 text-sm text-sky-700 flex items-center justify-between">
+        <div>© <span id="year">2026</span> Chawarut Nawasri</div>
+        <div>Built with <a href="https://tailwindcss.com/" class="text-rose-600 hover:underline">Tailwind CSS</a></div>
+      </div>
+    </footer>
   </div>
 </body>
 </html>

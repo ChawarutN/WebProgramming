@@ -1,47 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lab 2 – Coffee Order Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <h1>Coffee Order Form</h1>
-  <p>Choose your coffee preferences and submit your order below.</p>
+<body class="min-h-screen bg-sky-50">
+  <div class="min-h-screen flex flex-col">
+    <header class="bg-white/60 backdrop-blur sticky top-0 z-10 border-b">
+      <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-rose-500/90 flex items-center justify-center text-white font-bold">CN</div>
+          <div>
+            <h1 class="text-lg font-semibold text-sky-900">Chawarut's Web Playground</h1>
+            <p class="text-xs text-sky-700/80">Lab 2 — Coffee Order</p>
+          </div>
+        </div>
+        <nav class="hidden sm:flex gap-4 text-sm">
+          <a href="index.html" class="px-3 py-1 rounded-md hover:bg-sky-100">Home</a>
+          <a href="lab2-home.html" class="px-3 py-1 rounded-md hover:bg-sky-100">Lab Home</a>
+          <a href="lab2-about.html" class="px-3 py-1 rounded-md hover:bg-sky-100">About</a>
+        </nav>
+      </div>
+    </header>
 
-  <form action="https://www.w3schools.com/action_page.php" method="get">
-    <label for="name">Customer Name:</label><br />
-    <input type="text" id="name" name="customerName"><br /><br />
+    <main class="flex-grow">
+      <section class="max-w-4xl mx-auto px-6 py-12">
+        <div class="bg-white p-8 rounded-2xl shadow">
+          <h2 class="text-2xl font-bold text-sky-900">Coffee Order Form</h2>
+          <p class="mt-2 text-sky-700">Choose your coffee preferences and submit your order below.</p>
 
-    <label for="email">Email Address:</label><br />
-    <input type="email" id="email" name="email"><br /><br />
+          <form action="https://www.w3schools.com/action_page.php" method="get" class="mt-6 grid gap-4">
+            <div>
+              <label for="name" class="block text-sm font-medium text-sky-700">Customer Name</label>
+              <input type="text" id="name" name="customerName" class="mt-1 block w-full rounded-md border px-3 py-2">
+            </div>
 
-    <label for="coffee">Coffee Type:</label><br />
-    <select id="coffee" name="coffeeType">
-      <option value="Latte">Latte</option>
-      <option value="Cappuccino">Cappuccino</option>
-      <option value="Americano">Americano</option>
-      <option value="Mocha">Mocha</option>
-    </select><br /><br />
+            <div>
+              <label for="email" class="block text-sm font-medium text-sky-700">Email Address</label>
+              <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border px-3 py-2">
+            </div>
 
-    <p>Size:</p>
-    <input type="radio" id="small" name="size" value="Small">
-    <label for="small">Small</label><br />
-    <input type="radio" id="medium" name="size" value="Medium">
-    <label for="medium">Medium</label><br />
-    <input type="radio" id="large" name="size" value="Large">
-    <label for="large">Large</label><br /><br />
+            <div>
+              <label for="coffee" class="block text-sm font-medium text-sky-700">Coffee Type</label>
+              <select id="coffee" name="coffeeType" class="mt-1 block w-full rounded-md border px-3 py-2">
+                <option value="Latte">Latte</option>
+                <option value="Cappuccino">Cappuccino</option>
+                <option value="Americano">Americano</option>
+                <option value="Mocha">Mocha</option>
+              </select>
+            </div>
 
-    <p>Extras:</p>
-    <input type="checkbox" id="whipped" name="extras" value="Whipped Cream">
-    <label for="whipped">Whipped Cream</label><br />
-    <input type="checkbox" id="shot" name="extras" value="Extra Shot">
-    <label for="shot">Extra Shot</label><br />
-    <input type="checkbox" id="almond" name="extras" value="Almond Milk">
-    <label for="almond">Almond Milk</label><br /><br />
+            <div>
+              <p class="text-sm font-medium text-sky-700">Size</p>
+              <div class="mt-1 flex gap-4">
+                <label class="inline-flex items-center"><input type="radio" id="small" name="size" value="Small" class="form-radio"> <span class="ml-2">Small</span></label>
+                <label class="inline-flex items-center"><input type="radio" id="medium" name="size" value="Medium" class="form-radio"> <span class="ml-2">Medium</span></label>
+                <label class="inline-flex items-center"><input type="radio" id="large" name="size" value="Large" class="form-radio"> <span class="ml-2">Large</span></label>
+              </div>
+            </div>
 
-    <label for="instructions">Special Instructions:</label><br />
-    <textarea id="instructions" name="instructions" rows="4" cols="40"></textarea><br /><br />
+            <div>
+              <p class="text-sm font-medium text-sky-700">Extras</p>
+              <div class="mt-1 flex flex-col">
+                <label class="inline-flex items-center"><input type="checkbox" id="whipped" name="extras" value="Whipped Cream" class="form-checkbox"> <span class="ml-2">Whipped Cream</span></label>
+                <label class="inline-flex items-center"><input type="checkbox" id="shot" name="extras" value="Extra Shot" class="form-checkbox"> <span class="ml-2">Extra Shot</span></label>
+                <label class="inline-flex items-center"><input type="checkbox" id="almond" name="extras" value="Almond Milk" class="form-checkbox"> <span class="ml-2">Almond Milk</span></label>
+              </div>
+            </div>
 
-    <input type="submit" value="Submit Order">
-  </form>
+            <div>
+              <label for="instructions" class="block text-sm font-medium text-sky-700">Special Instructions</label>
+              <textarea id="instructions" name="instructions" rows="4" class="mt-1 block w-full rounded-md border px-3 py-2"></textarea>
+            </div>
+
+            <div class="pt-2">
+              <button type="submit" class="inline-flex items-center px-4 py-2 bg-rose-500 text-white rounded-md shadow hover:bg-rose-600">Submit Order</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-white/70 border-t py-4">
+      <div class="max-w-4xl mx-auto px-6 text-sm text-sky-700 flex items-center justify-between">
+        <div>© <span id="year">2026</span> Chawarut Nawasri</div>
+        <div>Built with <a href="https://tailwindcss.com/" class="text-rose-600 hover:underline">Tailwind CSS</a></div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>

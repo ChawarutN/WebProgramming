@@ -1,17 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lab 2 – Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="Lab 2 home and links">
 </head>
-<body>
-  <h1>Welcome to Lab 2!</h1>
-  <p>This lab shows how to link pages and build a coffee order form.</p>
+<body class="min-h-screen bg-sky-50">
+  <div class="min-h-screen flex flex-col">
+    <header class="bg-white/60 backdrop-blur sticky top-0 z-10 border-b">
+      <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-rose-500/90 flex items-center justify-center text-white font-bold">CN</div>
+          <div>
+            <h1 class="text-lg font-semibold text-sky-900">Chawarut's Web Playground</h1>
+            <p class="text-xs text-sky-700/80">Lab 2 — Links & Forms</p>
+          </div>
+        </div>
+        <nav class="hidden sm:flex gap-4 text-sm">
+          <a href="index.html" class="px-3 py-1 rounded-md hover:bg-sky-100">Home</a>
+          <a href="lab2-forms.html" class="px-3 py-1 rounded-md hover:bg-sky-100">Coffee Form</a>
+          <a href="lab2-about.html" class="px-3 py-1 rounded-md hover:bg-sky-100">About</a>
+        </nav>
+      </div>
+    </header>
 
-  <table border="1">
-    <tr><td><a href="lab2-about.html">About Lab 2</a></td></tr>
-    <tr><td><a href="https://www.mozilla.org">Mozilla Homepage</a></td></tr>
-    <tr><td><a href="https://www.tri-c.edu">Tri-C Homepage</a></td></tr>
-    <tr><td><a href="https://www.tri-c.edu/IT">Tri-C IT Page</a></td></tr>
-  </table>
+    <main class="flex-grow">
+      <section class="max-w-4xl mx-auto px-6 py-12">
+        <div class="bg-white p-8 rounded-2xl shadow">
+          <h2 class="text-2xl font-bold text-sky-900">Welcome to Lab 2</h2>
+          <p class="mt-2 text-sky-700">This lab shows how to link pages and build a coffee order form.</p>
+
+          <div class="mt-6 grid gap-4 sm:grid-cols-2">
+            <a href="lab2-about.html" class="block p-4 bg-sky-50 border rounded-lg hover:shadow">About Lab 2</a>
+            <a href="lab2-forms.html" class="block p-4 bg-sky-50 border rounded-lg hover:shadow">Coffee Order Form</a>
+            <a href="https://www.mozilla.org" class="block p-4 bg-sky-50 border rounded-lg hover:shadow">Mozilla Homepage</a>
+            <a href="https://www.tri-c.edu" class="block p-4 bg-sky-50 border rounded-lg hover:shadow">Tri-C Homepage</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-white/70 border-t py-4">
+      <div class="max-w-4xl mx-auto px-6 text-sm text-sky-700 flex items-center justify-between">
+        <div>© <span id="year">2026</span> Chawarut Nawasri</div>
+        <div>Built with <a href="https://tailwindcss.com/" class="text-rose-600 hover:underline">Tailwind CSS</a></div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
